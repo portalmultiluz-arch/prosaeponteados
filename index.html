@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="default">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prosa e Ponteado</title>
+
+    <!-- PWA Manifest & Theme Color -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#4a3a30">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Prosa e Ponteado: Sua biblioteca online dedicada a preservar e difundir a riqueza da cultura brasileira, da viola caipira à culinária, com ferramentas de IA." />
+    <meta name="keywords" content="cultura brasileira, viola caipira, música, folclore, culinária, arte, IA, inteligência artificial, educação cultural" />
+    <meta name="author" content="Prosa e Ponteado" />
+
+    <!-- Open Graph Meta Tags (for Facebook, LinkedIn, etc.) -->
+    <meta property="og:title" content="Prosa e Ponteado - Cultura Brasileira Online" />
+    <meta property="og:description" content="Sua biblioteca online dedicada a preservar e difundir a riqueza da cultura brasileira." />
+    <meta property="og:image" content="/social-preview.png" />
+    <meta property="og:url" content="https://prosaeponteado.com" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Prosa e Ponteado - Cultura Brasileira Online" />
+    <meta name="twitter:description" content="Sua biblioteca online dedicada a preservar e difundir a riqueza da cultura brasileira." />
+    <meta name="twitter:image" content="/social-preview.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      :root {
+        --font-base-size: 16px; /* Default font size */
+      }
+      html {
+        font-size: var(--font-base-size);
+        scroll-behavior: smooth;
+      }
+      /* Theme Variables */
+      :root[data-theme="default"] {
+        --brand-primary: #4a3a30;
+        --brand-secondary: #a07d5e;
+        --brand-accent: #d4ac6e;
+        --brand-bg: #fdfaf6;
+        --brand-text: #333333;
+      }
+      :root[data-theme="serra"] { /* Mountain/Cool */
+        --brand-primary: #2c3e50;
+        --brand-secondary: #3498db;
+        --brand-accent: #95a5a6;
+        --brand-bg: #ecf0f1;
+        --brand-text: #2c3e50;
+      }
+      :root[data-theme="mar"] { /* Sea/Ocean */
+        --brand-primary: #004d40;
+        --brand-secondary: #009688;
+        --brand-accent: #80cbc4;
+        --brand-bg: #e0f2f1;
+        --brand-text: #004d40;
+      }
+      :root[data-theme="sertao"] { /* Outback/Warm */
+        --brand-primary: #bf360c;
+        --brand-secondary: #ff7043;
+        --brand-accent: #ffcc80;
+        --brand-bg: #fff3e0;
+        --brand-text: #4e342e;
+      }
+      :root[data-theme="noite"] { /* Night/Dark */
+        --brand-primary: #eeeeee; /* Light Text */
+        --brand-secondary: #bdbdbd; /* Medium Text */
+        --brand-accent: #d4ac6e; /* Gold Accent */
+        --brand-bg: #212121; /* Dark BG */
+        --brand-text: #eeeeee; /* Light Text */
+      }
+
+      @keyframes fadeInScale {
+        from { transform: scale(0.95); opacity: 0; }
+        to { transform: scale(1); opacity: 1; }
+      }
+      .animate-fade-in-scale {
+        animation: fadeInScale 0.3s ease-out forwards;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'brand-primary': 'var(--brand-primary)',
+              'brand-secondary': 'var(--brand-secondary)',
+              'brand-accent': 'var(--brand-accent)',
+              'brand-bg': 'var(--brand-bg)',
+              'brand-text': 'var(--brand-text)',
+            },
+            fontFamily: {
+              'serif': ['"Playfair Display"', 'serif'],
+              'sans': ['"Roboto"', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+    <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@18.2.0",
+    "react/": "https://esm.sh/react@18.2.0/",
+    "react-dom/": "https://esm.sh/react-dom@18.2.0/",
+    "@google/genai": "https://esm.sh/@google/genai@0.14.0",
+    "jspdf": "https://aistudiocdn.com/jspdf@^3.0.2"
+  }
+}
+</script>
+    <!-- 
+      Placeholder for tracking pixels/analytics scripts
+      - Google Analytics
+      - Meta Pixel
+      - TikTok Pixel, etc.
+    -->
+  </head>
+  <body class="bg-brand-bg font-sans text-brand-text">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js').then(registration => {
+            console.log('SW registered: ', registration);
+          }).catch(registrationError => {
+            console.log('SW registration failed: ', registrationError);
+          });
+        });
+      }
+    </script>
+  </body>
+</html>
