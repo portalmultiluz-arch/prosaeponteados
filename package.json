@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+<<<<<<< HEAD
     "preview": "vite preview",
     "deploy": "gh-pages -d dist"
   },
@@ -14,12 +15,24 @@
     "jspdf": "^3.0.2",
     "react": "18.2.0",
     "react-dom": "18.2.0"
+=======
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "@google/genai": "0.14.0",
+    "jspdf": "^3.0.2"
+>>>>>>> 72f4ab03d6c552cb5f7d8d5b82144d42c8ca41c9
   },
   "devDependencies": {
     "@types/node": "^22.14.0",
     "@vitejs/plugin-react": "^5.0.0",
+<<<<<<< HEAD
     "gh-pages": "^6.3.0",
     "netlify-cli": "^23.5.1",
+=======
+>>>>>>> 72f4ab03d6c552cb5f7d8d5b82144d42c8ca41c9
     "typescript": "~5.8.2",
     "vite": "^6.2.0"
   }
