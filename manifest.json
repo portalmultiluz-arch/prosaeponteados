@@ -1,0 +1,21 @@
+{
+  "name": "Prosa e Ponteado",
+  "short_name": "ProsaPonteado",
+  "description": "Sua biblioteca online dedicada a preservar e difundir a riqueza da cultura brasileira.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fdfaf6",
+  "theme_color": "#4a3a30",
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
